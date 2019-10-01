@@ -12,6 +12,7 @@
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintEnd_toStartOf="@+id/layoutDetail"
               tools:layout="@layout/fragment_list"
+              android:name="com.wallpaper.fragmentrecyclerview.ListFrag"
               android:id="@+id/listFragView">
 
     </fragment>
@@ -26,6 +27,7 @@
                   android:id="@+id/layoutDetail">
 
         <fragment android:layout_width="match_parent" android:layout_height="0dp"
+                  android:name="com.wallpaper.fragmentrecyclerview.DetailFrag"
                   tools:layout="@layout/fragment_detail"
                   android:layout_weight="3"
                   android:id="@+id/listDetailView">
@@ -34,6 +36,7 @@
 
         <fragment android:layout_width="match_parent" android:layout_height="0dp"
                   tools:layout="@layout/fragment_add_person"
+                  android:name="com.wallpaper.fragmentrecyclerview.AddPersonFrag"
                   android:layout_weight="4"
                   android:id="@+id/addPersonView">
 

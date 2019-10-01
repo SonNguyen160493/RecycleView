@@ -28,7 +28,7 @@
                       android:layout_marginTop="10dp"
                       android:layout_marginStart="12dp"
                       android:textSize="18sp"
-                      android:id="@+id/tvName"/>
+                      android:id="@+id/tvNameList"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

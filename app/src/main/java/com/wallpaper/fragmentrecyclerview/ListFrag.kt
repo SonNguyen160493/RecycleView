@@ -10,27 +10,20 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_list.*
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  *
  */
 class ListFrag : Fragment() {
 
-    var viewRecycle: View? = null
+    private var myAdapter: PersonAdapter?= null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        viewRecycle = inflater.inflate(R.layout.fragment_list, container, false)
-        return viewRecycle
+        return inflater.inflate(R.layout.fragment_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -38,5 +31,11 @@ class ListFrag : Fragment() {
         recycleList.setHasFixedSize(true)
         recycleList.layoutManager = LinearLayoutManager(this.activity)
 
+        myAdapter = PersonAdapter(this@ListFrag.context, ApplicationClass.people)
+        recycleList.adapter = myAdapter
+    }
+
+    fun notifyDataChanged(){
+        myAdapter?.notifyDataSetChanged()
     }
 }
